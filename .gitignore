@@ -27,3 +27,10 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+.env
+.env*.local
+.byebug_history
+config/initializers/secret_token.rb
+
+/spec/tmp
