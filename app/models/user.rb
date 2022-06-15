@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  include DeviseTokenAuth::Concerns::User
-  has_many :schedulings, dependent: :destroy
-
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable, :omniauthable
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable,
+         :jwt_authenticatable,
+         :registerable,
+         jwt_revocation_strategy: JwtDenylist
 end

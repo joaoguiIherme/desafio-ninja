@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
-  # mount_devise_token_auth_for 'User', at: 'auth'
-  devise_for :users
+  devise_for :users,
+             controllers: {
+               sessions: 'users/sessions',
+               registrations: 'users/registrations'
+             }
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :rooms, only: %i[index show] do
+        resources :schedulings
+      end
+    end
+  end
 end
