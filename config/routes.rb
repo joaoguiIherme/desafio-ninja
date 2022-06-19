@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
+      resources :schedulings, only: %i[index show update destroy]
       resources :rooms, only: %i[index show] do
-        resources :schedulings
+        resources :schedulings, only: %i[create]
       end
     end
   end
