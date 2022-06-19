@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :scheduling do
-    user { nil }
-    room { nil }
-    start_time { "2022-06-14 00:59:51" }
-    end_time { "MyString" }
+    user { create(:user) }
+    room { create(:room) }
+    start_time { '15-08-2023 14:10' }
+    end_time { '15-08-2023 17:45' }
   end
 end

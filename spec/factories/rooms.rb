@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :room do
-    name { "MyString" }
+    name { 'My meeting room' }
     number { 1 }
   end
 end
