@@ -26,9 +26,6 @@ class Api::V1::SchedulingsController < ApplicationController
   end
 
   def update
-    # @meeting.start_time = update_params[:start_time]
-    # @meeting.end_time = update_params[:end_time]
-    # check_validation @meeting
     @meeting.update(update_params)
     if check_validation @meeting
       render json: @meeting.as_json
